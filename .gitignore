@@ -13,3 +13,8 @@ markdown_venv
 # Internal/development files (not part of public repo)
 _internal/                 # PDFs, intermediate conversions, local reference only
 *.docx                     # Office documents
+
+# Raw class files and parsed markdown (only summary/ and index.json are committed)
+content/*/raw/
+!scripts/*.py
+content/*/markdown/
