@@ -1,0 +1,11 @@
+[
+  { "label": "01", "title": "Introduction to Consumer Behaviour",            "file": "summary/01-Intro-to-Consumer-Behaviour.md",        "category": "Foundations" },
+  { "label": "02", "title": "Understanding Consumers and Types",             "file": "summary/04-Understanding-Consumers-and-Types.md",  "category": "Foundations" },
+  { "label": "03", "title": "Perception & Sensory Marketing",                "file": "summary/02-Perception.md",                         "category": "Psychological Factors" },
+  { "label": "04", "title": "Personality",                                   "file": "summary/03-Personality.md",                        "category": "Psychological Factors" },
+  { "label": "05", "title": "Emotion",                                       "file": "summary/05-Emotion.md",                            "category": "Psychological Factors" },
+  { "label": "06", "title": "Decision Making, Nudging & Persuasion",         "file": "summary/06-Decision-Making-and-Persuasion.md",     "category": "Decision Making" },
+  { "label": "07", "title": "Beyond Meat: Attitudes & Behaviour Change",     "file": "summary/08-Beyond-Meat-Attitudes-Case.md",         "category": "Decision Making" },
+  { "label": "08", "title": "Neuromarketing",                                "file": "summary/07-Neuromarketing.md",                     "category": "Research Methods" },
+  { "label": "09", "title": "Culture, Subcultures & Cross-Cultural CB",      "file": "summary/09-Culture-and-Subcultures.md",            "category": "Social & Cultural Influences" }
+]
