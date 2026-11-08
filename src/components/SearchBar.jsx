@@ -9,7 +9,7 @@ function SearchBar({ query, onChange, resultCount }) {
         <input
           type="text"
           className="search-input"
-          placeholder="Search lectures..."
+          placeholder="Search notes..."
           value={query}
           onChange={(e) => onChange(e.target.value)}
         />

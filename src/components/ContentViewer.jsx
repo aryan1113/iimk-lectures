@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { marked } from 'marked'
-import { lectures, cheatSheet, prepGuide } from '../data'
+import { cheatSheet, prepGuide } from '../data'
+import { loadMarkdown } from '../subjects'
 import '../styles/ContentViewer.css'
 
-function ContentViewer({ selectedId, isCheatSheet, isPrepGuide }) {
+function ContentViewer({ subjectId, lectures, selectedId, isCheatSheet, isPrepGuide }) {
   const [content, setContent] = useState('')
   const [loading, setLoading] = useState(true)
 
@@ -26,8 +27,11 @@ function ContentViewer({ selectedId, isCheatSheet, isPrepGuide }) {
           return
         }
 
-        const response = await fetch(`./${file}`)
-        const text = await response.text()
+        const text = await loadMarkdown(subjectId, file)
+        if (text === null) {
+          setContent('<p>Content not found</p>')
+          return
+        }
 
         const html = marked(text)
         setContent(html)
@@ -40,7 +44,7 @@ function ContentViewer({ selectedId, isCheatSheet, isPrepGuide }) {
     }
 
     fetchContent()
-  }, [selectedId, isCheatSheet, isPrepGuide])
+  }, [subjectId, selectedId, isCheatSheet, isPrepGuide])
 
   const getLectureTitle = () => {
     if (isCheatSheet) return cheatSheet.title

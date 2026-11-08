@@ -1,0 +1,10 @@
+.landing { max-width: 960px; margin: 0 auto; padding: 48px 20px; }
+.landing h1 { font-size: 2rem; }
+.landing-sub { color: var(--text-secondary); margin: 6px 0 28px; }
+.subject-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.subject-card { display: block; padding: 20px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-secondary); color: var(--text); text-decoration: none; box-shadow: var(--shadow); transition: transform .15s, border-color .15s; }
+.subject-card:hover { transform: translateY(-2px); border-color: var(--primary); }
+.subject-icon { font-size: 1.8rem; }
+.subject-card h2 { font-size: 1.1rem; margin: 8px 0 4px; }
+.subject-card p { color: var(--text-secondary); font-size: .9rem; }
+.subject-count { display: inline-block; margin-top: 12px; font-size: .8rem; color: var(--primary); }

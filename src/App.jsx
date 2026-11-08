@@ -1,122 +1,85 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import Sidebar from './components/Sidebar'
 import ContentViewer from './components/ContentViewer'
 import SearchBar from './components/SearchBar'
-import { lectures, cheatSheet, prepGuide } from './data'
+import Landing from './components/Landing'
+import { getSubject, getLectures } from './subjects'
 import './styles/App.css'
 
+// Hash routes: #/ (landing), #/<subject>, #/<subject>/<lectureId>
+// Legacy "#<lectureId>" links from the single-subject site map to financial-crisis.
+function parseHash() {
+  const raw = window.location.hash.slice(1)
+  if (!raw || raw === '/') return { subject: null, lecture: null }
+  if (!raw.startsWith('/')) return { subject: 'financial-crisis', lecture: raw }
+  const [subject, lecture] = raw.slice(1).split('/')
+  return { subject, lecture: lecture || null }
+}
+
 function App() {
-  const [selectedLecture, setSelectedLectureState] = useState(() => {
-    // Initialize from URL hash
-    const hash = window.location.hash.slice(1)
-    return hash || lectures[0].id
-  })
+  const [route, setRoute] = useState(parseHash)
   const [searchQuery, setSearchQuery] = useState('')
-  const [filteredLectures, setFilteredLectures] = useState(lectures)
 
-  // Wrapper to update both state and URL
-  const setSelectedLecture = (id) => {
-    setSelectedLectureState(id)
-    window.location.hash = id
-  }
-
-  // Listen for browser back/forward
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.slice(1)
-      if (hash) {
-        setSelectedLectureState(hash)
-      }
-    }
-    window.addEventListener('hashchange', handleHashChange)
-    return () => window.removeEventListener('hashchange', handleHashChange)
+    const onHash = () => setRoute(parseHash())
+    window.addEventListener('hashchange', onHash)
+    return () => window.removeEventListener('hashchange', onHash)
   }, [])
 
-  useEffect(() => {
-    if (searchQuery.trim() === '') {
-      setFilteredLectures(lectures)
-    } else {
-      const query = searchQuery.toLowerCase()
-      const filtered = lectures.filter(
-        lecture =>
-          lecture.title.toLowerCase().includes(query) ||
-          lecture.category.toLowerCase().includes(query)
-      )
-      setFilteredLectures(filtered)
+  const subject = route.subject ? getSubject(route.subject) : null
+  const lectures = useMemo(() => (subject ? getLectures(subject) : []), [subject])
 
-      // Auto-select first result if current selection not in filtered
-      if (filtered.length > 0 && !filtered.some(l => l.id === selectedLecture)) {
-        setSelectedLecture(filtered[0].id)
-      }
-    }
-  }, [searchQuery, selectedLecture])
+  // Reset search when switching subject
+  useEffect(() => setSearchQuery(''), [route.subject])
 
-  const handleSelectCheatSheet = () => {
-    setSelectedLecture('cheat-sheet')
-    setSearchQuery('')
-  }
+  if (!subject) return <Landing />
 
-  const handleSelectPrepGuide = () => {
-    setSelectedLecture('prep-guide')
-    setSearchQuery('')
-  }
+  const go = (id) => { window.location.hash = `/${subject.id}/${id}` }
+  const selectedId = route.lecture || lectures[0]?.id
+  const isCheatSheet = subject.extras && selectedId === 'cheat-sheet'
+  const isPrepGuide = subject.extras && selectedId === 'prep-guide'
 
-  const isCheatSheetSelected = selectedLecture === 'cheat-sheet'
-  const isPrepGuideSelected = selectedLecture === 'prep-guide'
-  const isSpecialContent = isCheatSheetSelected || isPrepGuideSelected
+  const q = searchQuery.trim().toLowerCase()
+  const filtered = q
+    ? lectures.filter((l) => l.title.toLowerCase().includes(q) || l.category.toLowerCase().includes(q))
+    : lectures
 
   return (
     <div className="app">
       <header className="app-header">
         <div className="header-content">
-          <h1>Financial Crisis Course</h1>
-          <div className="header-buttons">
-            <a
-              href="./plan.txt"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="special-btn"
-              title="Personal study plan"
-            >
-              📝 Plan for me
-            </a>
-            <button
-              className={`special-btn ${isPrepGuideSelected ? 'active' : ''}`}
-              onClick={handleSelectPrepGuide}
-              title="Study plan and simulation strategy"
-            >
-              🎯 Prep Guide
-            </button>
-            <button
-              className={`special-btn ${isCheatSheetSelected ? 'active' : ''}`}
-              onClick={handleSelectCheatSheet}
-              title="Quick reference guide"
-            >
-              📋 Cheat Sheet
-            </button>
-          </div>
+          <h1>
+            <a href="#/" className="home-link" title="All subjects">←</a> {subject.name}
+          </h1>
+          {subject.extras && (
+            <div className="header-buttons">
+              <a href="./plan.txt" target="_blank" rel="noopener noreferrer" className="special-btn" title="Personal study plan">
+                📝 Plan for me
+              </a>
+              <button className={`special-btn ${isPrepGuide ? 'active' : ''}`} onClick={() => go('prep-guide')}>
+                🎯 Prep Guide
+              </button>
+              <button className={`special-btn ${isCheatSheet ? 'active' : ''}`} onClick={() => go('cheat-sheet')}>
+                📋 Cheat Sheet
+              </button>
+            </div>
+          )}
         </div>
       </header>
 
       <div className="app-container">
         <aside className="app-sidebar">
-          <SearchBar
-            query={searchQuery}
-            onChange={setSearchQuery}
-            resultCount={filteredLectures.length}
-          />
-          <Sidebar
-            lectures={filteredLectures}
-            selectedId={selectedLecture}
-            onSelectLecture={setSelectedLecture}
-          />
+          <SearchBar query={searchQuery} onChange={setSearchQuery} resultCount={filtered.length} />
+          <Sidebar lectures={filtered} selectedId={selectedId} onSelectLecture={go} grouped={!q} />
         </aside>
 
         <main className="app-content">
           <ContentViewer
-            selectedId={selectedLecture}
-            isCheatSheet={isCheatSheetSelected}
-            isPrepGuide={isPrepGuideSelected}
+            subjectId={subject.id}
+            lectures={lectures}
+            selectedId={selectedId}
+            isCheatSheet={isCheatSheet}
+            isPrepGuide={isPrepGuide}
           />
         </main>
       </div>

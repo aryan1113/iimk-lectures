@@ -1,11 +1,10 @@
-import { lectures as allLectures } from '../data'
 import '../styles/Sidebar.css'
 
-function Sidebar({ lectures, selectedId, onSelectLecture }) {
+function Sidebar({ lectures, selectedId, onSelectLecture, grouped }) {
   // Group by category if we're showing all lectures
   let groupedLectures = {}
 
-  if (lectures.length === allLectures.length) {
+  if (grouped) {
     lectures.forEach(lecture => {
       if (!groupedLectures[lecture.category]) {
         groupedLectures[lecture.category] = []
@@ -24,11 +23,6 @@ function Sidebar({ lectures, selectedId, onSelectLecture }) {
           <h3 className="category-title">{category}</h3>
           <ul className="lecture-list">
             {lectureGroup
-              .sort((a, b) => {
-                if (a.number === null) return 1
-                if (b.number === null) return -1
-                return a.number - b.number
-              })
               .map(lecture => (
                 <li key={lecture.id}>
                   <button
@@ -36,7 +30,7 @@ function Sidebar({ lectures, selectedId, onSelectLecture }) {
                     onClick={() => onSelectLecture(lecture.id)}
                   >
                     <span className="lecture-number">
-                      {lecture.number ? `Lec ${lecture.number}` : '📚'}
+                      {lecture.label ?? (lecture.number ? `Lec ${lecture.number}` : '📚')}
                     </span>
                     <span className="lecture-title">{lecture.title}</span>
                   </button>
