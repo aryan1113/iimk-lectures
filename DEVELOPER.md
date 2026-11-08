@@ -78,3 +78,27 @@ This is intentionally **not shared with students** — it's analysis for the mai
 ---
 
 **For public documentation, see `README.md`**
+
+---
+
+## Multi-subject layout (current)
+
+The site now hosts several subjects. Routes are hash-based: `#/` (landing), `#/<subject>`, `#/<subject>/<note-id>`.
+
+```
+content/<subject>/
+├── raw/        # original PDF/PPTX  (gitignored, local only)
+├── markdown/   # converted text     (gitignored; shown only if no summary/ exists)
+└── summary/    # cleaned notes      (committed; preferred when present)
+```
+
+Subjects: `financial-crisis`, `sdm`, `ecommerce`, `imc`, `behavioural-strategy`, `consumer-behaviour`.
+
+### Adding / updating notes
+1. Drop files in `content/<subject>/raw/`.
+2. `source markdown_venv/bin/activate && python3 scripts/convert_subject.py <subject>` (needs `markitdown[pdf]` and `python-pptx`).
+3. Optionally write cleaned notes into `content/<subject>/summary/` — the app uses them instead of `markdown/`.
+4. `npm run build` (outputs to `docs/`), commit, push.
+
+### Adding a subject
+Add an entry to `src/subjects.js` and create `content/<id>/`. Financial Crisis is curated in `src/data.js` (categories, cheat sheet, prep guide); other subjects are auto-listed from their files.
