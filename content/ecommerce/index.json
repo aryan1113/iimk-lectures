@@ -1,0 +1,50 @@
+[
+  {
+    "label": "S1",
+    "title": "What Exactly Counts as E-Commerce?",
+    "file": "summary/01-Session-1-What-Is-E-Commerce.md",
+    "category": "Overview"
+  },
+  {
+    "label": "S2",
+    "title": "Where, When and Through Whom Commerce Happens",
+    "file": "summary/02-Session-2-Where-When-Through-Whom.md",
+    "category": "Overview"
+  },
+  {
+    "label": "S4-6",
+    "title": "Infrastructure, Security and Payments",
+    "file": "summary/03-Sessions-4-6-Infrastructure-Security-Payments.md",
+    "category": "Infrastructure & Strategy"
+  },
+  {
+    "label": "S7-9",
+    "title": "E-Commerce Strategy and Business Models",
+    "file": "summary/04-Sessions-7-9-E-Commerce-Strategy.md",
+    "category": "Infrastructure & Strategy"
+  },
+  {
+    "label": "Nykaa",
+    "title": "E-Commerce Marketing through Nykaa",
+    "file": "summary/05-E-Commerce-Marketing-Through-Nykaa.md",
+    "category": "Marketing & Analytics"
+  },
+  {
+    "label": "S10-12",
+    "title": "E-Commerce Analytics",
+    "file": "summary/06-Sessions-10-12-Ecommerce-Analytics.md",
+    "category": "Marketing & Analytics"
+  },
+  {
+    "label": "S13-14",
+    "title": "E-Commerce UX",
+    "file": "summary/07-Sessions-13-14-Ecommerce-UX.md",
+    "category": "UX & Integration"
+  },
+  {
+    "label": "Guest",
+    "title": "Four Core Concepts (Guest Session)",
+    "file": "summary/08-Guest-Session-Four-Core-Concepts.md",
+    "category": "UX & Integration"
+  }
+]
