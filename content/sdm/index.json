@@ -1,0 +1,11 @@
+[
+  { "label": "S1-3",   "title": "Introduction to Selling",                    "file": "summary/S01-03-Intro-to-Selling.md",                              "category": "Selling" },
+  { "label": "S4-6",   "title": "Understanding the Customer",                 "file": "summary/S04-06-Understanding-the-Customer.md",                    "category": "Selling" },
+  { "label": "S7-8",   "title": "Selling Frameworks, Social Selling & Storytelling", "file": "summary/S07-08-Selling-Frameworks-Social-Selling-Storytelling.md", "category": "Selling" },
+  { "label": "S9-10",  "title": "B2B Selling and SPIN",                       "file": "summary/S09-10-SPIN-Selling.md",                                  "category": "Selling" },
+  { "label": "S11-12", "title": "SPIN Critique, Frameworks & Attitudes",      "file": "summary/S11-12-SPIN-Critique-Frameworks-Attitudes.md",            "category": "Selling" },
+  { "label": "S13-15", "title": "Negotiation",                                "file": "summary/S13-15-Negotiation.md",                                   "category": "Negotiation & Persuasion" },
+  { "label": "S16-17", "title": "Persuasion & Behavioural Selling",           "file": "summary/S16-17-Persuasion-Behavioural-Selling.md",                "category": "Negotiation & Persuasion" },
+  { "label": "S18-21", "title": "Distribution Channel Management",            "file": "summary/S18-21-Channel-Management.md",                            "category": "Distribution Channels" },
+  { "label": "S22",    "title": "Better Salesforce Management",               "file": "summary/S22-Salesforce-Management.md",                            "category": "Salesforce Management" }
+]
