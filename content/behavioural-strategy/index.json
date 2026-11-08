@@ -1,0 +1,56 @@
+[
+  {
+    "label": "S1-3",
+    "title": "Behavioural Strategy: Flattery, Decision-Making and Nudge",
+    "file": "summary/01-Intro-Flattery-Nudge-and-Strategy.md",
+    "category": "Foundations: Decisions and Biases"
+  },
+  {
+    "label": "S4-6",
+    "title": "Bounded Rationality, Awareness and Escalation",
+    "file": "summary/02-Bounded-Rationality-Biases-and-Escalation.md",
+    "category": "Foundations: Decisions and Biases"
+  },
+  {
+    "label": "S7-9",
+    "title": "Organizational Inertia and Performance Responses",
+    "file": "summary/03-Organizational-Inertia-and-Performance-Responses.md",
+    "category": "Organizational Inertia and Learning"
+  },
+  {
+    "label": "S10-12",
+    "title": "Everest Simulation: Information Sharing",
+    "file": "summary/04-Everest-Simulation-Information-Sharing.md",
+    "category": "Organizational Inertia and Learning"
+  },
+  {
+    "label": "S13",
+    "title": "Building a Learning Organization",
+    "file": "summary/05-Building-a-Learning-Organization.md",
+    "category": "Organizational Inertia and Learning"
+  },
+  {
+    "label": "S14-15",
+    "title": "Organizational Learning and Collective Intelligence",
+    "file": "summary/06-Organizational-Learning-and-Collective-Intelligence.md",
+    "category": "Organizational Inertia and Learning"
+  },
+  {
+    "label": "S16-19",
+    "title": "Crisis Management, TMT and Team Decisions",
+    "file": "summary/07-Crisis-Management-TMT-and-Team-Decisions.md",
+    "category": "Crisis, Teams and Resilience"
+  },
+  {
+    "label": "S19-20",
+    "title": "Patient Zero Simulation and Agile Absorption",
+    "file": "summary/08-Patient-Zero-Simulation-and-Agile-Absorption.md",
+    "category": "Crisis, Teams and Resilience"
+  },
+  {
+    "label": "S21-22",
+    "title": "Course Wrap-Up: Humility and Emplotment",
+    "file": "summary/09-Course-Wrap-Up-Cognitive-Humility-and-Emplotment.md",
+    "category": "Wrap-Up"
+  }
+]

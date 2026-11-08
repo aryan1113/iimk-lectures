@@ -1,0 +1,22 @@
+# Sessions 16-19: Reputational Loss, Crisis Management, Top Management Teams and Evolution-Revolution
+
+## Key Concepts
+
+- **Reputational loss and stigma.** Stigma is being devalued, spoiled or flawed through **categorization**: membership of a socially discredited category (country of origin, industry, activity). Warm-up prompts (Germany, Japan, China, water, automobile, tobacco) show how categories carry associations. Redemption differs across cultures and standards evolve over time.
+- **Crisis management.** Crisis is inevitable; recovering "the right way" can improve brand image.
+- **The Joker as master crisis creator.** Batman was stronger, better trained and resourced, supported by society and institutions, rational, unbiased, free of inertia and continuously learning, yet struggled against the Joker. Why: unpredictable behaviour; constantly novel circumstances; engineered **lose-lose propositions**; ambiguity of choices and consequences; exploiting Batman's refusal to cross a line; inherent stakeholder trade-offs; the Joker's readiness to destroy at will (saving vs destroying). Lesson: crisis management needs discipline and relentless consistency in managing and preventing crises.
+- **Good ways to manage a crisis:** speed ("if you don't speak, others will"; own the narrative, keep an ear to the ground); plan for one (fire drills, what-if scenarios, escalation protocols, priorities); recognize the crisis type and medium (public relations vs operational vs strategic) before responding; consistent stakeholder engagement; leadership ("a true test is how well you function in a crisis"), evolving with needs and reality.
+- **Top Management Team (TMT):** a small group of highly influential executives at the apex (CEO, CFO, COO...); direct reports of the CEO is a common heuristic; top-down approaches named are the transformation process model and Balanced Scorecard; often not formalized; top management is a shared activity. Useful because it is the highest decision body, predicts strategic decisions, has more explanatory power than the CEO alone, and the organization reflects its top managers.
+- **TMT characteristics and strategic choices.** Age, education, socio-economic background and experience relate to diversification (related/unrelated), financial leverage, innovation and internationalization. Findings: greater cross-area experience means more unrelated diversification; younger TMTs show more variability from industry averages; less diverse TMTs decide faster; more diverse TMTs are more profitable in turbulent environments.
+- **Ideal team:** small, complementary skills, common purpose, performance goals, mutual accountability. The slides ask which of these characteristics are less likely in TMTs, without an answer. Can a TMT be a team? A role-play (Neha, Jay, Raj, board) explored why TMTs cannot decide. **Conflict is unavoidable and valuable when constructive.**
+- **Voting paradox** (Huey, Dewey, Louie choosing among beach, mountain, foreign trips with cyclic preferences): without deliberation voting can be ineffective; simple majorities are not absolute majorities; **dictator by default** syndrome.
+- **Incentivized system:** 25 area heads and a CEO consider an independent project with a 50% chance of earning Rs 2.5 crore and 50% of losing Rs 1 crore. The slides pose the questions (how many managers say yes? how many would the CEO want?) without an answer; the usual answer, that individually risk-averse managers refuse while the CEO would want all undertaken, is outside the slides. Slide conclusion: principals are often to blame for incentive structures that make agents choose poorly.
+- **Evolution and revolution:** organizational growth is marked by phases. The (flattened) table shows five phases, Creativity, Direction, Delegation, Coordination, Collaboration, with a second row reading Leadership, Autonomy, Control, Red tape and "?" for phase 5. (Outside the slides: this is Greiner's model, where the second row names the crisis ending each phase.) Solutions in one phase become problems in the next; ties to inertia and to leadership failures (talents that built the firm become liabilities). Balance inertia and adaptability.
+
+## Why This Matters
+
+Reputation and crises hit firms unpredictably, and the quality of top-team decision processes determines the response.
+
+## Relevance for Exams / Cases
+
+Plan a crisis response, explain TMT composition effects on strategy, and diagnose a stalled team or perverse incentive.
