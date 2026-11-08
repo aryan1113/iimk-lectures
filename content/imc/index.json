@@ -1,0 +1,38 @@
+[
+  {
+    "label": "01",
+    "title": "Introduction to IMC, Mission (Goal Setting) and Market (STP)",
+    "file": "summary/01-Intro-Mission-Market.md",
+    "category": "Course Handouts"
+  },
+  {
+    "label": "02",
+    "title": "Media Planning, Internet (Search) Advertising and OTT",
+    "file": "summary/02-Media-Planning-Internet-OTT.md",
+    "category": "Course Handouts"
+  },
+  {
+    "label": "03",
+    "title": "Message and Creative Strategy",
+    "file": "summary/03-Message-and-Creative-Strategy.md",
+    "category": "Course Handouts"
+  },
+  {
+    "label": "R3",
+    "title": "R3: Paid Search Advertising",
+    "file": "summary/04-R3-Paid-Search-Advertising.md",
+    "category": "Readings"
+  },
+  {
+    "label": "R6",
+    "title": "R6: Event Sponsorship and Ambush Marketing (Beijing Olympics)",
+    "file": "summary/05-R6-Event-Sponsorship-and-Ambush-Marketing.md",
+    "category": "Readings"
+  },
+  {
+    "label": "HBR",
+    "title": "HBR: LLMs Are Overtaking Search",
+    "file": "summary/06-H093L2-LLMs-Overtaking-Search.md",
+    "category": "Readings"
+  }
+]
