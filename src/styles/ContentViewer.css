@@ -186,3 +186,8 @@
     margin: 1.25rem 0 0.625rem;
   }
 }
+
+.content-tabs { display: flex; gap: 6px; margin-top: 10px; }
+.content-tabs button { padding: 6px 14px; border: 1px solid var(--border); border-radius: 999px; background: var(--bg-secondary); color: var(--text-secondary); font-size: 0.85rem; cursor: pointer; }
+.content-tabs button.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+.markdown-content blockquote { border-left: 3px solid var(--primary); background: var(--bg-secondary); margin: 14px 0; padding: 10px 16px; border-radius: 0 8px 8px 0; }

@@ -1,12 +1,19 @@
 import { useState, useEffect } from 'react'
 import { marked } from 'marked'
 import { cheatSheet, prepGuide } from '../data'
-import { loadMarkdown } from '../subjects'
+import { loadMarkdown, getNotesFile } from '../subjects'
 import '../styles/ContentViewer.css'
 
 function ContentViewer({ subjectId, lectures, selectedId, isCheatSheet, isPrepGuide }) {
   const [content, setContent] = useState('')
   const [loading, setLoading] = useState(true)
+  const [tab, setTab] = useState('notes')
+
+  const lectureFile = (!isCheatSheet && !isPrepGuide) ? lectures.find(l => l.id === selectedId)?.file : null
+  const notesFile = getNotesFile(subjectId, lectureFile)
+
+  // Reading notes are the default view whenever a lecture has them
+  useEffect(() => { setTab('notes') }, [subjectId, selectedId])
 
   useEffect(() => {
     const fetchContent = async () => {
@@ -19,6 +26,7 @@ function ContentViewer({ subjectId, lectures, selectedId, isCheatSheet, isPrepGu
           file = prepGuide.file
         } else {
           file = lectures.find(l => l.id === selectedId)?.file
+          if (notesFile && tab === 'notes') file = notesFile
         }
 
         if (!file) {
@@ -44,7 +52,7 @@ function ContentViewer({ subjectId, lectures, selectedId, isCheatSheet, isPrepGu
     }
 
     fetchContent()
-  }, [subjectId, selectedId, isCheatSheet, isPrepGuide])
+  }, [subjectId, selectedId, isCheatSheet, isPrepGuide, tab, notesFile])
 
   const getLectureTitle = () => {
     if (isCheatSheet) return cheatSheet.title
@@ -56,6 +64,16 @@ function ContentViewer({ subjectId, lectures, selectedId, isCheatSheet, isPrepGu
     <div className="content-viewer">
       <div className="content-header">
         <h2>{getLectureTitle()}</h2>
+        {notesFile && (
+          <div className="content-tabs" role="tablist">
+            <button role="tab" aria-selected={tab === 'notes'} className={tab === 'notes' ? 'active' : ''} onClick={() => setTab('notes')}>
+              Reading notes
+            </button>
+            <button role="tab" aria-selected={tab === 'quick'} className={tab === 'quick' ? 'active' : ''} onClick={() => setTab('quick')}>
+              Quick revision
+            </button>
+          </div>
+        )}
       </div>
 
       {loading ? (

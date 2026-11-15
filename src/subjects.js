@@ -1,7 +1,7 @@
 import { lectures as fcLectures } from './data'
 
 // Lazy-loaded raw markdown for every subject (summary/, markdown/ or top-level extras)
-const files = import.meta.glob(['../content/*/{summary/*.md,markdown/*.md,*.md}', '!../content/financial-crisis/markdown/*.md'], {
+const files = import.meta.glob(['../content/*/{summary/*.md,notes/*.md,markdown/*.md,*.md}', '!../content/financial-crisis/markdown/*.md'], {
   query: '?raw',
   import: 'default',
 })
@@ -57,4 +57,11 @@ export function getLectures(subject) {
 export async function loadMarkdown(subjectId, file) {
   const loader = files[`../content/${subjectId}/${file}`]
   return loader ? loader() : null
+}
+
+// Long-form reading note paired with a summary: content/<id>/notes/<same file name>
+export function getNotesFile(subjectId, file) {
+  if (!file || !file.startsWith('summary/')) return null
+  const notes = file.replace('summary/', 'notes/')
+  return files[`../content/${subjectId}/${notes}`] ? notes : null
 }
